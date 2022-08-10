@@ -1,7 +1,4 @@
 <?php
-// Logging functions.
-require_once 'inc/log.php';
-
 // Admin modifications.
 require_once 'inc/admin.php';
 
