@@ -2,7 +2,7 @@
 /**
  * Related Articles resolver.
  *
- * @package Canstar
+ * @package WP headless
  */
 add_action(
     'graphql_register_types',

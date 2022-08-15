@@ -2,7 +2,7 @@
 /**
  * Add GraphQL resolvers
  *
- * @package  Canstar
+ * @package WP headless
  */
 
 // check if WPGraphQL plugin is active.

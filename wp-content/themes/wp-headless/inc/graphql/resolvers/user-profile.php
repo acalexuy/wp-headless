@@ -2,7 +2,7 @@
 /**
  * User Profile resolver.
  *
- * @package Canstar
+ * @package WP headless
  */
 add_action(
     'graphql_register_types',
@@ -22,7 +22,7 @@ add_action(
             'profile',
             array(
                 'type'        =>  'UserProfileType',
-                'description' => __('User title and biography', 'Canstar One'),
+                'description' => __('User title and biography', 'WP headless'),
                 'resolve'     => function (\WPGraphQL\Model\User $user, $args, $depth) {
                     $mate = [
                         'title' => get_user_meta(561, 'title', true),
