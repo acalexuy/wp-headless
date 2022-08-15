@@ -7,28 +7,30 @@
 add_action(
     'graphql_register_types',
     function () {
-        register_graphql_object_type('UserProfileType', [
+        register_graphql_object_type('AuthorProfileType', [
             'fields' => [
                 'title' => [
                     'type' => 'String'
                 ],
                 'biography' => [
                     'type' => 'String'
-                ]
+                ]              
             ],
         ]);
         register_graphql_field(
-            'User',
-            'profile',
+            'Post',
+            'authorProfile',
             array(
-                'type'        =>  'UserProfileType',
-                'description' => __('User title and biography', 'WP headless'),
-                'resolve'     => function (\WPGraphQL\Model\User $user, $args, $depth) {
-                    $mate = [
-                        'title' => get_user_meta(561, 'title', true),
-                        'biography' => get_user_meta(561, 'biography', true),
+                'type'        =>  'AuthorProfileType',
+                'description' => __('Author title and biography', 'WP Headless'),
+                'resolve'     => function ($post, $args, $context, $info ) {
+                    $author = get_post_field( 'post_author', $post->ID );
+                    $authorId = get_the_author_meta( 'ID', $author );
+                    $authorProfile = [
+                        'title' => get_user_meta($authorId, 'title', true),
+                        'biography' => get_user_meta($authorId, 'biography', true),
                     ];
-                    return $mate;
+                    return $authorProfile;
                 },
             )
         );
