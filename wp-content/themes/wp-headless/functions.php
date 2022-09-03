@@ -25,3 +25,5 @@ require_once 'inc/custom-post-types/super-risk-tolerance.php';
 require_once 'inc/custom-fields/user-profile-fields.php';
 
 require_once 'inc/custom-post-templates/sub-hubs.php';
+
+remove_action('template_redirect', 'redirect_canonical');
