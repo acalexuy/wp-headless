@@ -8,6 +8,8 @@ require_once 'inc/menus.php';
 // Add GraphQL resolvers.
 require_once 'inc/graphql/resolvers.php';
 
+require_once 'inc/misc/helpers.php';
+
 // Custom Post Types
 require_once 'inc/custom-post-types/comparison.php';
 require_once 'inc/custom-post-types/disclaimers.php';
