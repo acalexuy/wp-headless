@@ -786,3 +786,5 @@ function twentytwenty_get_elements_array() {
 	 */
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+add_filter( 'redirect_canonical', '__return_false' );
