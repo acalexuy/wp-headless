@@ -25,3 +25,6 @@ require_once 'inc/custom-post-types/super-risk-tolerance.php';
 require_once 'inc/custom-fields/user-profile-fields.php';
 
 require_once 'inc/custom-post-templates/sub-hubs.php';
+
+//ACF
+require_once 'inc/misc/acf.php';
