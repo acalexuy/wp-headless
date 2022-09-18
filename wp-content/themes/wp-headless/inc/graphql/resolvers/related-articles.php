@@ -15,7 +15,8 @@ add_action(
 		'resolve' => function( \WPGraphQL\Model\Post $source, $args, $context, $info ) {
 			$resolver = new \WPGraphQL\Data\Connection\PostObjectConnectionResolver( $source, $args, $context, $info, 'post' );
 			$resolver->set_query_arg( 'category__in', wp_get_post_categories($source->ID) );
-            $resolver->set_query_arg( 'posts_per_page', 3 );
+			$resolver->set_query_arg( 'orderby', 'rand' );
+            $resolver->set_query_arg( 'posts_per_page', 4 );
             $resolver->set_query_arg( 'post__not_in', array($source->ID) );
             return $resolver->get_connection();
 		}
